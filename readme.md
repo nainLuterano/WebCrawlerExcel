@@ -1,8 +1,9 @@
-# WebCrawler com excel
+# WebCrawler and excel
 
-A possui duas classes a webCrawler e o excel.
+O pacote possui duas classes a webCrawler e o excel.
 
-> O arquivo app.py possui um exemplo de uso das classes
+> O arquivo app.py possui um exemplo de uso das classes.
+
 > Execute pip install -r requirements.txt para instalar as dependência das classes
 
 
@@ -11,13 +12,14 @@ A possui duas classes a webCrawler e o excel.
 
     Métodos da classe  webCrawler:
         - setUrl
-            seta a url do site que você quer.
+            parametro: 1° string        
+            define a url do site que você quer.
         
         - setHeaders:
             parametro: 1° dicionário
-            seta o user agent que você quer usar, o formato é um dicionário. Por padrão e formato dos dado é esse.
+            define o user agent que você quer usar, o formato é um dicionário. Por padrão e formato dos dado é esse.
 
-            > {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+> {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
             
         - getTags:
             parametros: 1° string
@@ -33,11 +35,11 @@ A possui duas classes a webCrawler e o excel.
             parametros: 1° string
             return um Objeto Tag buscado por id, se não houver retorna objeto NoneType.
             
-            > getFindById('Id'). Id que você quer buscar.
+> getFindById('Id'). Id que você quer buscar.
 
         - download
             parametros: nenhum
-            a função necessária para buscar o html da página e deve ser usada depois de definir url e antes das outras funções de busca
+            a função necessária para buscar o html da página e deve ser usada depois de definir url e setHeaders e  antes das outras funções de busca
 
 
 ## classe Excel
@@ -52,29 +54,29 @@ A possui duas classes a webCrawler e o excel.
             parametros: 1° array
             define o cabeçalho da tabela panilha
             
-            > setHeader(['Preço', 'Posição'])
+> setHeader(['Preço', 'Posição'])
 
         - setBody
             parametros: 1° array
             define os dados na linha panilha
 
-            > setBody(['R$ 12', 25])
+> setBody(['R$ 12', 25])
 
         - setValueInPosition
             parametros: 1° int , 2° int, 3° string ou int
             define um valor em uma determinada posição na panilha
             
-            > setValueInPosition(row=1, column=2, 21)
+> setValueInPosition(row=1, column=2, 21)
 
         - setFunctionInPosition
             parametros: 1° string, 2° string
             define a função que a posição irá receber
             
-            > setValueInPosition('A21', '=SUM(A1:A12)')
+> setValueInPosition('A21', '=SUM(A1:A12)')
 
         - save
             parametros: 1° string
             define o nome do arquivo excel e o formato e irá salvar dentro da pasta save
 
-            > save('dados.xlsx')
+> save('dados.xlsx')
 
